@@ -55,7 +55,7 @@
                 "displayName": "[parameters('topLevelManagementGroupPrefix')]",
                 "details": {
                     "parent": {
-                        "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('parentId'))]"
+                        "id": "[concat('Microsoft.Management/managementGroups/', parameters('parentId'))]"
                     }
                 }
             }
