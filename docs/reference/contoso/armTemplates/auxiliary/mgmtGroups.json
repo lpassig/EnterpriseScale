@@ -21,7 +21,7 @@
         },
         "parentId": {
             "type": "string",
-            "defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+            "defaultValue": "/providers/Microsoft.Management/managementGroups/72f988bf-86f1-41af-91ab-2d7cd011db47",
             "metadata": {
                 "description": "Provide Parent ID of the up management group."
             }
@@ -55,7 +55,7 @@
                 "displayName": "[parameters('topLevelManagementGroupPrefix')]",
                 "details": {
                     "parent": {
-                        "id": "[concat('Microsoft.Management/managementGroups/', parameters('parentId'))]"
+                        "id": "[if(empty(parameters('parentId')),json('null'),parameters('parentId'))]"
                     }
                 }
             }
