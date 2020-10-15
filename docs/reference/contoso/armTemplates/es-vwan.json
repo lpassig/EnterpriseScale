@@ -270,13 +270,13 @@
         },
         "azEnvPolicy": "[variables('azPolicyEnvMapping')[environment().resourceManager]]",
         "deploymentUris": {
-            "managementGroups": "[uri(deployment().properties.templateLink.uri, 'auxiliary/mgmtGroups.json')]",
-            "policyDefinitions": "[concat(uri(deployment().properties.templateLink.uri, variables('azEnvPolicy')))]",
-            "monitoring": "[uri(deployment().properties.templateLink.uri, 'auxiliary/logAnalytics.json')]",
-            "monitoringSolutions": "[uri(deployment().properties.templateLink.uri, 'auxiliary/logAnalyticsSolutions.json')]",
-            "connectivity": "[uri(deployment().properties.templateLink.uri, 'auxiliary/vwan-connectivity.json')]",
-            "diagnosticsAndSecurity": "[uri(deployment().properties.templateLink.uri, 'auxiliary/diagnosticsAndSecurity.json')]",
-            "landingZone": "[uri(deployment().properties.templateLink.uri, 'auxiliary/lz.json')]"
+            "managementGroups": "https://raw.githubusercontent.com/lpassig/EnterpriseScale/main/docs/reference/contoso/armTemplates/auxiliary/mgmtGroups.json",
+            "policyDefinitions": "https://raw.githubusercontent.com/lpassig/EnterpriseScale/main/docs/reference/contoso/armTemplates/auxiliary/policies.json",
+            "monitoring": "https://raw.githubusercontent.com/lpassig/EnterpriseScale/main/docs/reference/contoso/armTemplates/auxiliary/logAnalytics.json",
+            "monitoringSolutions": "https://raw.githubusercontent.com/lpassig/EnterpriseScale/main/docs/reference/contoso/armTemplates/auxiliary/logAnalyticsSolutions.json",
+            "connectivity": "https://raw.githubusercontent.com/lpassig/EnterpriseScale/main/docs/reference/contoso/armTemplates/auxiliary/vwan-connectivity.json",
+            "diagnosticsAndSecurity": "https://raw.githubusercontent.com/lpassig/EnterpriseScale/main/docs/reference/contoso/armTemplates/auxiliary/diagnosticsAndSecurity.json",
+            "landingZone": "https://raw.githubusercontent.com/lpassig/EnterpriseScale/main/docs/reference/contoso/armTemplates/auxiliary/lz.json"
         },
         "moveSubscription": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-management', '/', parameters('managementSubscriptionId'))]",
         "noSubscription": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-management', '/', 'na')]",

@@ -19,6 +19,13 @@
                 "description": "Management groups for platform specific purposes, such as management, networking, identity etc."
             }
         },
+        "parentId": {
+            "type": "string",
+            "defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+            "metadata": {
+                "description": "Provide Parent ID of the up management group."
+            }
+        },
         "landingZoneMgs": {
             "type": "array",
             "defaultValue": [
@@ -44,7 +51,14 @@
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
             "name": "[parameters('topLevelManagementGroupPrefix')]",
-            "properties": {}
+            "properties": {
+                "displayName": "[parameters('topLevelManagementGroupPrefix')]",
+                "details": {
+                    "parent": {
+                        "id": "[if(empty(parameters('parentId')),json('null'),parameters('parentId'))]"
+                    }
+                }
+            }
         },
         {
             // Create management group for platform management groups
